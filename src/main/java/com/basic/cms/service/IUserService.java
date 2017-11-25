@@ -7,6 +7,5 @@ public interface IUserService {
 
 	ResponseModel register(TblUser user);
 	ResponseModel getMessage(Integer id);
-
 	ResponseModel list();
 }
