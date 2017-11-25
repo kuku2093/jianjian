@@ -17,14 +17,14 @@ import com.basic.cms.service.IUserService;
 public class UserService implements IUserService {
 
 	@Autowired
-	private TblUserMapper userMapper;
+	private TblUserMapper tblUserMapper;
 	
 	@Override
 	public ResponseModel register(TblUser user) {
 		// TODO Auto-generated method stub
 		
         try {
-        	userMapper.insert(user);
+        	tblUserMapper.insert(user);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,7 +39,7 @@ public class UserService implements IUserService {
 		// TODO Auto-generated method stub
 		TblUser user = null;
 		try {
-			 user =  userMapper.selectByPrimaryKey(id);
+			 user =  tblUserMapper.selectByPrimaryKey(id);
 			 if (user == null) {
 				 return ResponseModel.build(0, "查询失败");
 			}
@@ -56,8 +56,8 @@ public class UserService implements IUserService {
 	public ResponseModel list() {
 		// TODO Auto-generated method stub
        TblUserExample example = new TblUserExample();
-        Criteria criteria = example.createCriteria();
-		List<TblUser> userList =  userMapper.selectByExample(example);
+        Criteria criteria =   example.createCriteria();
+		List<TblUser> userList =  tblUserMapper.selectByExample(example);
         
 		return ResponseModel.build(1, "查询成功",userList);
 	}

@@ -1,10 +1,9 @@
 package com.basic.cms.mapper;
 
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
-
 import com.basic.cms.model.TblUser;
 import com.basic.cms.model.TblUserExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TblUserMapper {
     int countByExample(TblUserExample example);
